@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sallan306/FriendFinder/issues"
   },
-  "homepage": "https://github.com/sallan306/FriendFinder#readme"
+  "homepage": "https://github.com/sallan306/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
