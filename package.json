@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/sallan306/FriendFinder#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "nodemon": "^1.18.7",
     "path": "^0.12.7"
   }
 }
