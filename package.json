@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sallan306/FriendFinder#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "path": "^0.12.7"
   }
 }
