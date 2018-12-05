@@ -31,23 +31,25 @@
 
         <!-- Reservation Page -->
         <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">Psychoanalytics Section:</h4>
-                <p>In this section we will gague your unique personality 
-                    identifiers to match you with the best possible person! Please
-                    answer truthfully and be mindful of your answers. Good Luck!</p>
-          </div>
+          <h4 class="panel-title">Basic Information</h4>
+          <br>
           <div class="panel-body">
 
             <form role="form">
 
-                <input class="form-control" id="userName" type="text" placeholder="Enter your name">
+                <input class="form-control" id="userName" type="text" placeholder="Your name">
                 <br>
-                <input class="form-control" id="userLink" type="text" placeholder="Enter a link to a picture of yourself">
+                <input class="form-control" id="userLink" type="text" placeholder="URL for a picture of yourself">
                 <br>
+                <div class="panel-heading">
+                  <h4 class="panel-title">Psychoanalytics Section:</h4>
+                      <p>In this section we will gague your unique personality 
+                          identifiers to match you with the best possible person! Please
+                          answer truthfully and be mindful of your answers. Good Luck!</p>
+                </div>
                 <h6>Do you like Nature?</h6>
                 <select class="form-control form-control-sm" id="question1">
-                    <option></option>
+                    <!-- <option></option> -->
                     <option value="1">Strongly Disagree</option>
                     <option value="2">Disagree</option>
                     <option value="3">Indifferent</option>
@@ -56,7 +58,7 @@
                 </select>
                 <h6>Do you like science?</h6>
                 <select class="form-control form-control-sm" id="question2">
-                        <option></option>
+                        <!-- <option></option> -->
                         <option value="1">Strongly Disagree</option>
                         <option value="2">Disagree</option>
                         <option value="3">Indifferent</option>
@@ -65,7 +67,7 @@
                 </select>
                 <h6>Do you like sports?</h6>
                 <select class="form-control form-control-sm" id="question3">
-                        <option></option>
+                        <!-- <option></option> -->
                         <option value="1">Strongly Disagree</option>
                         <option value="2">Disagree</option>
                         <option value="3">Indifferent</option>
@@ -74,7 +76,7 @@
                 </select>
                 <h6>Do you like painting?</h6>
                 <select class="form-control form-control-sm" id="question4">
-                        <option></option>
+                        <!-- <option></option> -->
                         <option value="1">Strongly Disagree</option>
                         <option value="2">Disagree</option>
                         <option value="3">Indifferent</option>
@@ -83,7 +85,7 @@
                 </select>
                 <h6>Do you like politics?</h6>
                 <select class="form-control form-control-sm" id="question5">
-                        <option></option>
+                        <!-- <option></option> -->
                         <option value="1">Strongly Disagree</option>
                         <option value="2">Disagree</option>
                         <option value="3">Indifferent</option>
@@ -92,7 +94,7 @@
                 </select>
                 <h6>Do you like cooking?</h6>
                 <select class="form-control form-control-sm" id="question6">
-                        <option></option>
+                        <!-- <option></option> -->
                         <option value="1">Strongly Disagree</option>
                         <option value="2">Disagree</option>
                         <option value="3">Indifferent</option>
@@ -101,7 +103,7 @@
                 </select>
                 <h6>Do you like comic books?</h6>
                 <select class="form-control form-control-sm" id="question7">
-                        <option></option>
+                        <!-- <option></option> -->
                         <option value="1">Strongly Disagree</option>
                         <option value="2">Disagree</option>
                         <option value="3">Indifferent</option>
@@ -110,7 +112,7 @@
                 </select>
                 <h6>Do you like working out?</h6>
                 <select class="form-control form-control-sm" id="question8">
-                        <option></option>
+                        <!-- <option></option> -->
                         <option value="1">Strongly Disagree</option>
                         <option value="2">Disagree</option>
                         <option value="3">Indifferent</option>
@@ -119,7 +121,7 @@
                 </select>
                 <h6>Do you like fantasy?</h6>
                 <select class="form-control form-control-sm" id="question9">
-                        <option></option>
+                        <!-- <option></option> -->
                         <option value="1">Strongly Disagree</option>
                         <option value="2">Disagree</option>
                         <option value="3">Indifferent</option>
@@ -128,7 +130,7 @@
                 </select>
                 <h6>Do you like romance?</h6>
                 <select class="form-control form-control-sm" id="question10">
-                        <option></option>
+                        <!-- <option></option> -->
                         <option value="1">Strongly Disagree</option>
                         <option value="2">Disagree</option>
                         <option value="3">Indifferent</option>
@@ -157,71 +159,74 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
+var tableData = {}
+var serverData = []
 
-    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
- 
+$(".submit").on("click", function(event) {
+  event.preventDefault();
+  tableData = 
+    {
+    name: $('#userName').val(),
+    image: $("#userLink").val(),
+    scores: [ 
+      parseInt($('#question1').val()),
+      parseInt($("#question2").val()),
+      parseInt($("#question3").val()),
+      parseInt($("#question4").val()),
+      parseInt($("#question5").val()),
+      parseInt($("#question6").val()),
+      parseInt($("#question7").val()),
+      parseInt($("#question8").val()),
+      parseInt($("#question9").val()),
+      parseInt($("#question10").val()) ]
+    }
 
-      $(".submit").on("click", function(event) {
-        event.preventDefault();
-        // if(     $('#question1').val() === '' || 
-        //         $('#question2').val() === '' ||
-        //         $('#question3').val() === '' ||
-        //         $('#question4').val() === '' ||
-        //         $('#question5').val() === '' ||
-        //         $('#question6').val() === '' ||
-        //         $('#question7').val() === '' ||
-        //         $('#question8').val() === '' ||
-        //         $('#question9').val() === '' ||
-        //         $('#question10').val() === '') {
-        //     console.log("fill in all of the answers dude")
-        // }
-        // else {
-        // Here we grab the form elements
-        var userInfo = {
+  
+  $.post("/api/reserve", tableData,
+    function(data) {
+      $.get("/api/reserve",function(data){
+              //console.log("input GOT!")
+              //console.log(data)
+              serverData = data;
+            console.log(serverData)
+            console.log(tableData)
+            console.log(serverData[0].scores.length)
+            console.log(tableData.scores.length)
+            compareMatches(serverData,tableData)
+            
+      })
+  })
+});
+function compareMatches(server,user) {
+  var compare = 0
+  var results = []
+  for (let i = 0;i<server.length;i++) {
+    console.log("serverLength "+ server.length)
+    for (let j = 0;j<server[i].scores.length;j++) {
+      if (server[i].scores[j] >= user.scores[j]) {
+          compare += (server[i].scores[j] - user.scores[j])
+          console.log("server: " +server[i].scores[j] + " minus user "+ user.scores[j])
+      }
+      else {
+        compare += (user.scores[j] - server[i].scores[j])
+        console.log("j: "+j+"i: " +i+" user: " +user.scores[j] + " minus server "+ server[i].scores[j])
+      }
+    }
+    console.log("compare: "+compare)
+    results.push(compare)
+    compare = 0
+    
+  }
+  console.log(results)
 
-        name: $('#userName').val(),
-        image: $("#userLink").val(),
-        question1: $('#question1').val(),
-        question2: $("#question2").val(),
-        question3: $("#question3").val(),
-        question4: $("#question4").val(),
-        question5: $("#question5").val(),
-        question6: $("#question6").val(),
-        question7: $("#question7").val(),
-        question8: $("#question8").val(),
-        question9: $("#question9").val(),
-        question10: $("#question10").val(),
-        };
-
-        // console.log(newReservation);
-
-        // This line is the magic. It"s very similar to the standard ajax function we used.
-        // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-        // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-        // depending on if a tables is available or not.
-
-        $.post("/api/reserve", userInfo,
-          function(data) {
-
-            // If a table is available... tell user they are booked.
-            if (data) {
-              alert("Profile information submitted!");
-              console.log(data)
-            }
-            else {
-                alert("data not submitted properly!")
-            }
-            //clear form fields
-
-          });
-
-
-        //}
-
-
-      });
-
+  var matchedNumber = Math.min.apply(null, results)
+  // console.log("lowest number in array: "+matchedNumber)
+  var matchedIndex = results.indexOf(matchedNumber);
+  // console.log("match index: "+matchedIndex)
+  var match = server[matchedIndex]
+  // console.log(match.name)
+  $(".panel").html("your match is: "+match.name+"<br>")
+  // console.log("<img src='"+match.image+"'>")
+  $(".panel").append("<img width = '100%' src='"+match.image+"'>")
+}
 </script>
