@@ -19,7 +19,7 @@ router.get("/reserve", function(req, res){
 
 
 router.post('/reserve', function(req, res){
-    userData = req
+    userData = req.body
     console.log("user's data is stored on the server")
     // console.log(userData);
     console.log(userData)
