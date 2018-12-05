@@ -7,7 +7,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {add,tableData} = require('../data/tables.js');
+const {add,tableData} = require('../data/friends.js');
 
 
 router.get("/tables", function(req, res){
