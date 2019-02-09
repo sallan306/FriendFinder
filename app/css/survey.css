@@ -1,0 +1,30 @@
+
+
+body {
+    background: #3bc2f5b0;
+}   
+
+.jumbotron {
+    /* width: 90vw; */
+    /* margin-left: 5vw; */
+    height: 40vh;
+    margin-top: 3vh;
+    background: #c31414;
+    border-radius: 200px;
+    margin-bottom: 2vh;
+}
+
+.btn-primary, .btn   {
+    color: #212529;
+    background-color: #77d4f8;
+    border-color: #77d4f8;
+}
+
+.submit {
+    margin-top: 2vh;
+}
+
+img {
+    width: 50%;
+    margin-left: 25%;
+}

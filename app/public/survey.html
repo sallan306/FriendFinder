@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/survey.css">  
 
 </head>
 <body>
@@ -31,7 +32,7 @@
 
         <!-- Reservation Page -->
         <div class="panel panel-default">
-          <h4 class="panel-title">Basic Information</h4>
+          <h4 class="panel-title text-center">Basic Information</h4>
           <br>
           <div class="panel-body">
 
@@ -42,8 +43,8 @@
                 <input class="form-control" id="userLink" type="text" placeholder="URL for a picture of yourself">
                 <br>
                 <div class="panel-heading">
-                  <h4 class="panel-title">Psychoanalytics Section:</h4>
-                      <p>In this section we will gague your unique personality 
+                  <h4 class="panel-title text-center">Psychoanalytics Section:</h4>
+                      <p class="text-center">In this section we will gague your unique personality 
                           identifiers to match you with the best possible person! Please
                           answer truthfully and be mindful of your answers. Good Luck!</p>
                 </div>
@@ -139,7 +140,7 @@
                 </select>
 
 
-              <button type="submit" class="btn btn-primary submit">Submit</button>
+              <button type="submit" class="btn btn-primary text-center submit">Submit</button>
             </form>
 
           </div>
@@ -225,7 +226,7 @@ function compareMatches(server,user) {
   // console.log("match index: "+matchedIndex)
   var match = server[matchedIndex]
   // console.log(match.name)
-  $(".panel").html("your match is: "+match.name+"<br>")
+  $(".panel").html("<p class='text-center'> your match is: "+match.name+"</p>")
   // console.log("<img src='"+match.image+"'>")
   $(".panel").append("<img width = '100%' src='"+match.image+"'>")
 }
