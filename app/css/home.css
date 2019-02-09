@@ -12,6 +12,7 @@ body {
     height: 50vh;
     margin-top: 25vh;
     background: #c31414;
+    border-radius: 200px;
 }
 
 .btn-primary {
