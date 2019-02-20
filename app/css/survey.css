@@ -1,9 +1,15 @@
 
-
+h6 {
+    width: 80%;
+    margin-left: 10%
+}
 body {
     background: #3bc2f5b0;
 }   
-
+.form-control {
+    width: 80%;
+    margin-left: 10%;
+}
 .jumbotron {
     /* width: 90vw; */
     /* margin-left: 5vw; */
@@ -15,13 +21,17 @@ body {
 }
 
 .btn-primary, .btn   {
+    border-radius: 25px;
     color: #212529;
     background-color: #77d4f8;
     border-color: #77d4f8;
 }
 
 .submit {
+    background-color: #c31414;
+    border-color: #c31414;
     margin-top: 2vh;
+    margin-left: 10%;
 }
 
 img {
