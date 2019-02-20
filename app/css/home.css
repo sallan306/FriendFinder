@@ -21,3 +21,32 @@ body {
     border-color: #77d4f8;
     border-radius: 25px;
 }
+
+
+@media only screen and (max-width: 600px) {
+
+    html {
+        background: none;
+    }
+    
+    body {
+        background: #3bc2f5b0;
+    }   
+    
+    .jumbotron {
+        width: 90vw;
+        margin-left: 5vw;
+        height: 40vh;
+        margin-top: 25vh;
+        background: #c31414;
+        border-radius: 100px;
+    }
+    
+    .btn-primary {
+        color: #212529;
+        background-color: #77d4f8;
+        border-color: #77d4f8;
+        border-radius: 25px;
+    }
+
+}

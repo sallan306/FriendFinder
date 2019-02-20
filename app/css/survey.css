@@ -38,3 +38,49 @@ img {
     width: 50%;
     margin-left: 25%;
 }
+
+
+@media only screen and (max-width: 600px) {
+
+    h6 {
+        width: 80%;
+        margin-left: 10%
+    }
+    body {
+        background: #3bc2f5b0;
+    }   
+    .form-control {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .jumbotron {
+        /* width: 90vw; */
+        /* margin-left: 5vw; */
+        height: 35vh;
+        margin-top: 3vh;
+        background: #c31414;
+        border-radius: 100px;
+        margin-bottom: 2vh;
+    }
+    
+    .btn-primary, .btn   {
+        border-radius: 25px;
+        color: #212529;
+        background-color: #77d4f8;
+        border-color: #77d4f8;
+    }
+    
+    .submit {
+        background-color: #c31414;
+        border-color: #c31414;
+        margin-top: 2vh;
+        margin-left: 10%;
+        margin-bottom: 2vh;
+    }
+    
+    img {
+        width: 90vw;
+        margin-left: 2vw;
+    }
+
+}
